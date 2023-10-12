@@ -10,7 +10,7 @@ export class OrderService {
   constructor(private _HttpClient:HttpClient) { }
 
   checkOut(id: string, orderDetails: object): Observable<any>{
-    return this._HttpClient.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${id}?url=https://github.com/SallamChalbi/EcommerceProject`, {
+    return this._HttpClient.post(`https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${id}?url=https://ecommerce-project-ten-ecru.vercel.app`, {
       shippingAddress: orderDetails
     })
   }
