@@ -1,0 +1,30 @@
+<div class="auth-overlay d-flex align-items-center justify-content-center" *ngIf="overlay">
+    <i class="fa-solid fa-spinner fa-spin fa-3x text-white"></i>
+</div>
+
+<section class="py-5">
+    <div class="container py-5 my-5 p-5 bg-light rounded">
+        <h2>My wish List</h2>
+    
+        <div *ngIf="!empty">
+        
+            <div class="row border-bottom my-3 d-flex align-items-center p-2" *ngFor="let wichLes of wichLesDetails">
+                <div class="col-md-2">
+                    <img alt="" class="w-100" [src]="wichLes.imageCover">
+                </div>
+                <div class="col-md-10 d-flex justify-content-between">
+                    <div>
+                        <h5>{{wichLes.title}}</h5>
+                        <h6>{{wichLes.price}} EGP</h6>
+                        <button type="button" class="btn btn-sm m-0 p-0 text-danger" (click)="removeWichList(wichLes._id)">
+                            <i class="fa fa-trash"></i> Remove
+                        </button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn-count btn btn-lg d-block mx-auto" (click)="addToCart(wichLes._id)"> add To Cart</button>    
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</section>

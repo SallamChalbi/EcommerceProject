@@ -1,0 +1,15 @@
+button {
+    background-color: #22db14;
+    transition: all .5s;
+    color: #fff;
+
+    &:hover{
+        background-color: #22db14;
+        filter: brightness(.9);
+        color: #fff;
+    }
+}
+
+.heart-color{
+    color: #1f513b;
+}

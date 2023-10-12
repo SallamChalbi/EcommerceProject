@@ -1,1 +1,134 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@500&display=swap');
+
+$main-color: #4fa74f;
+$hover-color: #3fa43f;
+$light-color: #f0f3f2;
+$green-color: #22db14;
+$red-color: red;
+$shadow: rgba(145,158,171,0.2) 0px 2px 4px -1px,
+         rgba(145,158,171,0.2) 0px 4px 5px 0px,
+         rgba(145,158,171,0.2) 0px 1px 10px 0px;
+
+$rating-color: #ffc908;
+$main-transition: 0.8s;
+
+body{
+    font-family: "Encode Sans Expanded", sans-serif;
+}
+
+.rating-color{
+    color: $rating-color;
+}
+
+.active{
+    color: #000;
+}
+
+.main{
+    color: $main-color;
+}
+
+.green{
+    color: $green-color;
+}
+
+.text-red{
+    color: $red-color !important;
+}
+
+.text-main{
+    color: $main-color;
+
+    &:hover{
+        background-color: $hover-color;
+    }
+
+}
+.bg-main{
+    background-color: $main-color;
+}
+
+.bg-main-light{
+    background-color: $light-color;
+}
+
+.font-sm{
+    font-size: 12px;
+}
+
+.nav-icon{
+    font-size: 2rem;
+    color: $main-color;
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+
+.btn-auth{
+    color: #fff;
+    background-color: $main-color;
+    display: block;
+
+    &:hover{
+        background-color: $hover-color;
+        color: #fff;
+    }
+}
+
+.auth-overlay{
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #4a4a4acc;
+    z-index: 10;
+}
+
+.product {
+    transition: all .5s;
+    cursor: pointer;
+
+    &:hover{
+        box-shadow: 1px 1px 10px $main-color;
+    }
+    &:hover button{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.heart-font{
+    font-size: calc(1.3rem + .6vw);
+}
+
+.btn-count {
+    border: #22db14 1px solid;
+
+    &:hover{
+        border: #22db14 1px solid;
+    }
+}
+
+.button-style {
+    background-color: #4fa74f;
+    color: #fff;
+    transition: all .5s;
+    transform: translateY(300px);
+    opacity: 0;
+
+    &:hover{
+        background-color: #4fa74f;
+        filter: brightness(.9);
+        color: #fff;
+    }
+}
+
+.card {
+    transition: all .5s;
+
+    &:hover{
+        box-shadow: 1px 1px 10px #4fa74f;
+    }
+}

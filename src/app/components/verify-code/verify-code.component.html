@@ -1,0 +1,16 @@
+<div class="auth-overlay d-flex align-items-center justify-content-center" *ngIf="overlay">
+    <i class="fa-solid fa-spinner fa-spin fa-3x text-white"></i>
+</div>
+<div class="container my-5 py-5">
+    <h2>please enter your verification code</h2>
+    <form [formGroup]="verifyForm" (ngSubmit)="handleForm()">
+        <div class="form-floating mb-3">
+            <input type="text" id="floatingInput" placeholder="your code" class="form-control" formControlName="resetCode">
+            <label for="floatingInput">code </label>
+        </div><!---->
+        <div class="alert alert-danger" *ngIf="errMsg">
+            <p class="m-2">{{ errMsg }}</p>
+        </div>
+        <button type="submit" class="btn btn-lg me-auto btn-outline-success">verify</button>
+    </form>
+</div>

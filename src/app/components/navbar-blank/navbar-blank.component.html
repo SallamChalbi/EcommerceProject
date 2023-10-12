@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand" routerLink="/">
+            <div class="d-flex align-items-center justify-content-center">
+                <i class="fa-solid fa-cart-shopping nav-icon"></i>
+                <span class="h3 bold">fresh cart</span>
+            </div>
+        </a>
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav m-auto mt-2 mt-lg-0">
+                
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="/cart">cart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="/wichList">wich list</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="/products">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="/categories">categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive="active" routerLink="/brands">brands</a>
+                </li>
+               
+            </ul>
+            <ul class="navbar-nav ms-auto mt-2 align-items-center mt-lg-0 gap-2">
+                <li class="nav-item position-relative">
+                    <a class="nav-link" routerLinkActive="active" routerLink="/cart">
+                        <i class="fa-solid fa-cart-shopping fs-3"></i>
+                        <div class="badge position-absolute text-white top-0 end-0 bg-main">{{cartNumber}}</div>
+                    </a>
+                </li>
+                <li class="nav-item" (click)="signOut()">
+                    <a class="nav-link" >log out</a>
+                </li>
+            </ul>
+           
+        </div>
+  </div>
+</nav>
+

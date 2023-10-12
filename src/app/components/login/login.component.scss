@@ -1,0 +1,8 @@
+.forget {
+    cursor: pointer;
+    transition: all .5s;
+
+    &:hover{
+        color: #3fa43f;
+    }
+}

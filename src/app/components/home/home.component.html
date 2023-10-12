@@ -1,0 +1,64 @@
+<div class="auth-overlay d-flex align-items-center justify-content-center" *ngIf="overlay">
+    <i class="fa-solid fa-spinner fa-spin fa-3x text-white"></i>
+</div>
+
+<section class="container my-5 pt-5">
+    <div class="row g-0 justify-content-center">
+        <div class="col-md-3">
+            <owl-carousel-o [options]="mainSlideOptions">
+                <ng-template carouselSlide>
+                    <img src="./assets/images/main-slider-1.jpg" alt="">
+                </ng-template>
+                <ng-template carouselSlide>
+                    <img src="./assets/images/main-slider-2.jpg" alt="">
+                </ng-template>
+                <ng-template carouselSlide>
+                    <img src="./assets/images/main-slider-3.jpg" alt="">
+                </ng-template>
+              </owl-carousel-o>
+        </div>
+        <div class="col-md-3">
+            <img src="./assets/images/main-slider-4.jpg" alt="" class="w-100">
+            <img src="./assets/images/main-slider-5.jpg" alt="" class="w-100">
+        </div>
+    </div>
+</section>
+
+<section class="my-5">
+    <owl-carousel-o [options]="categoryOptions">
+
+        <ng-container *ngFor="let category of categoryData">
+          <ng-template carouselSlide>
+            <img [src]="category.image" alt="" height="250" [title]="category.name" class="w-100 object-fit-cover">
+            <h3> {{category.name}} </h3>
+          </ng-template>
+        </ng-container>
+    
+      </owl-carousel-o>
+</section>
+
+<section class="container my-5">
+    <input type="text" placeholder="search...." class="w-75 mx-auto form-control my-5" [(ngModel)]="searchInput">
+    <div class="row">
+        <div class="col-md-6 col-lg-3" *ngFor="let product of productsData | search: searchInput">
+            <div class="product px-2 py-4 rounded" >
+                <div [routerLink]="['/ProductDetails', product._id]">
+                    <img alt="" class="w-100 rounded" [src]="product.imageCover">
+                    <p class="main">{{product.category.name}}</p>
+                    <h2 class="h6">{{product.title | cuttext}}</h2>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span>{{product.price}} EGp</span>
+                        <div class="d-flex align-items-center">
+                            <i class="fa fa-star rating-color"></i>
+                            <span>{{product.ratingsAverage}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                    <button type="button" class="w-75 btn mt-4 button-style" (click)="addProduct(product._id)"> + Add</button> <!-- (click)="addProduct(product._id, heart) -->
+                    <i #heart class="fa-solid fa-heart heart-font" [ngClass]="wichLesData.includes($any(product._id)) ? 'text-red' : ''" (click)="addRemoveWichLes(product._id, heart)"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,44 @@
+<div class="auth-overlay d-flex align-items-center justify-content-center" *ngIf="overlay">
+    <i class="fa-solid fa-spinner fa-spin fa-3x text-white"></i>
+</div>
+
+<section class="container my-5 pt-5">
+    <h1 class="main text-center mb-5">All Brands</h1>
+    <div class="row g-4">
+        <div class="col-md-3" *ngFor="let brand of allBrandsData">
+          <div (click)="openModal(template)" >
+            <div class="card" (click)="getBrand(brand._id)">
+              <div class="card-img">
+                  <img alt="" class="img-fluid" [src]="brand.image">
+              </div>
+              <div class="card-body">
+                  <p class="text-center">{{brand.name}}</p>
+              </div>
+            </div>
+          </div>   
+        </div>
+    </div>
+</section>
+
+<ng-template #template>
+   <div class="modal-header">
+      <button type="button" class="btn-close" aria-label="Close" (click)="modalRef.hide()">
+      </button>
+   </div>
+   <div class="modal-body">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-md-6">
+        <h1 class="main">{{brandData?.name}}</h1>
+        <p>{{brandData?.slug}}</p>
+      </div>
+      <div class="col-md-6">
+        <img alt="" class="img-fluid" [src]="brandData?.image">
+      </div>
+    </div>
+   </div>
+   <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="modalRef.hide()">Close</button>
+   </div>
+</ng-template>
+
+

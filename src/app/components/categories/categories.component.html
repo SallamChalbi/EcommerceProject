@@ -1,0 +1,28 @@
+<div class="auth-overlay d-flex align-items-center justify-content-center" *ngIf="overlay">
+    <i class="fa-solid fa-spinner fa-spin fa-3x text-white"></i>
+</div>
+
+<section class="container my-5 pt-5">
+    <div class="row g-4">
+        <div class="col-md-4" *ngFor="let category of categoryData">
+            <div class="card" (click)="getAllSubCategories(category._id, category.name)">
+                <div class="card-img">
+                    <img alt="" class="img-fluid ratio-4x3 w-100 object-fit-cover" [src]="category.image" [title]="category.name">
+                </div>
+                <div class="card-body">
+                    <p class="text-success h3 text-center"> {{category.name}} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container my-5 pb-5" *ngIf="categoryName">
+    <h2 class="text-center main my-4 ng-star-inserted"> {{categoryName}} subcategories</h2><!---->
+    <div class="row gy-3">
+        <div class="col-md-4 ng-star-inserted" *ngFor="let item of subCategoriesData">
+            <div class="card">
+                <p class="h3 text-center p-3">{{item}}</p>
+            </div>
+        </div>
+    </div>
+</section>
